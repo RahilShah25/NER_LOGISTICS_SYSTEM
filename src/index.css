@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased selection:bg-teal-600 selection:text-white;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Nordic Teal & Slate Custom Scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0d9488;
+  }
+}
+
+@layer components {
+  /* Nordic Teal & Slate Cards */
+  .gov-card {
+    @apply bg-white border border-slate-200/90 rounded-2xl shadow-sm hover:shadow-md transition-all;
+  }
+  
+  .gov-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+
+  .gov-table th {
+    @apply px-4 py-3 text-left text-[11px] font-bold text-slate-500 bg-slate-50 uppercase tracking-wider border-b border-slate-200;
+  }
+
+  .gov-table td {
+    @apply px-4 py-3.5 text-xs text-slate-800 border-b border-slate-100;
+  }
+
+  .pulse-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  .pulse-glow-red {
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
+  }
+
+  .pulse-glow-teal {
+    box-shadow: 0 0 14px rgba(13, 148, 136, 0.4);
+  }
+}
+
+/* Hide Leaflet Attribution & Watermark Overlays */
+.leaflet-control-attribution,
+.leaflet-bottom.leaflet-right,
+.leaflet-control-attribution.leaflet-control {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Custom Leaflet Marker Styling Override */
+.custom-vehicle-marker, .hazard-marker, .city-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #ccfbf1 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 25px -5px rgba(13, 148, 136, 0.15), 0 8px 10px -6px rgba(15, 23, 42, 0.1) !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.04); }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
