@@ -138,9 +138,5 @@ NER_LOGISTICS_SYSTEM/
 
 ---
 
-## 🏆 Smart India Hackathon (SIH 2026)
 
-Developed for **SIH 2026** under the problem domain: *North Eastern Region Logistics & Accessibility Intelligence Network*.
-
-**Team**: Rahil Shah & Team  
 **GitHub Repository**: [https://github.com/RahilShah25/NER_LOGISTICS_SYSTEM.git](https://github.com/RahilShah25/NER_LOGISTICS_SYSTEM.git)
